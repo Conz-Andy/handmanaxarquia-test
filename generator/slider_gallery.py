@@ -1,6 +1,11 @@
 # Before/after comparison-slider gallery (drag the handle to sweep between photos).
+import base64
+from pathlib import Path
 from content_en import GALLERY_PAIRS, u
 from helpers import cta_band
+
+_MARK = "data:image/svg+xml;base64," + base64.b64encode(
+    (Path(__file__).resolve().parent.parent / "site/images/logo_mark.svg").read_bytes()).decode()
 
 STYLE = """<style>
 .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
@@ -11,14 +16,14 @@ STYLE = """<style>
 .cmp .cmp-before { clip-path: inset(0 calc(100% - var(--p)) 0 0); }
 .cmp-handle {
   position: absolute; top: 0; bottom: 0; left: var(--p); width: 3px;
-  background: var(--orange); transform: translateX(-50%); pointer-events: none;
+  background: var(--black); transform: translateX(-50%); pointer-events: none;
 }
 .cmp-handle::after {
-  content: "\\2194"; position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%); width: 40px; height: 40px; border-radius: 50%;
-  background: var(--orange); color: var(--black); font-size: 19px; font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 14px rgba(0,0,0,.35);
+  content: ""; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%;
+  background: var(--black) url(__MARK__) center/52% no-repeat;
+  border: 2px solid rgba(255,255,255,.9);
+  box-shadow: 0 4px 14px rgba(0,0,0,.4);
 }
 .cmp input[type=range] {
   position: absolute; inset: 0; width: 100%; height: 100%;
@@ -46,9 +51,9 @@ document.querySelectorAll('[data-cmp]').forEach(function (c) {
 def gallery_body_slider(lang, ui):
     en = lang == "en"
     title = "Our work — before & after" if en else "Våra arbeten — före & efter"
-    sub = ("Real projects across the Axarquia. Drag the orange handle on each photo to sweep between before and after."
+    sub = ("Real projects across the Axarquia. Drag the handle on each photo to sweep between before and after."
            if en else
-           "Verkliga projekt i Axarquía. Dra i det orange handtaget på varje bild för att växla mellan före och efter.")
+           "Verkliga projekt i Axarquía. Dra i handtaget på varje bild för att växla mellan före och efter.")
     lb, la = ("Before", "After") if en else ("Före", "Efter")
     cards = "".join(f"""<div class="ba-card">
   <div class="cmp" data-cmp>
@@ -61,7 +66,7 @@ def gallery_body_slider(lang, ui):
   </div>
   <h3>{cap_en if en else cap_sv}</h3>
 </div>""" for b, a, cap_en, cap_sv in GALLERY_PAIRS[:6])
-    return f"""{STYLE}<div class="page-hero"><div class="container">
+    return f"""{STYLE.replace("__MARK__", _MARK)}<div class="page-hero"><div class="container">
   <h1>{title}</h1>
   <p class="lead">{sub}</p>
 </div></div>
