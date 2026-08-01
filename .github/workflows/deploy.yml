@@ -1,0 +1,43 @@
+name: Build and deploy test site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pillow
+
+      - name: Decode logo assets
+        run: |
+          mkdir -p site/images
+          base64 -d assets_b64/logo160.png.b64 > site/images/logo.png
+          base64 -d assets_b64/logo_mark.svg.b64 > site/images/logo_mark.svg
+
+      - name: Build site and test bundle
+        run: |
+          cd generator
+          python build.py
+          python postprocess_test.py /handmanaxarquia-test
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./test_build
+          publish_branch: gh-pages
+          force_orphan: true
+    
