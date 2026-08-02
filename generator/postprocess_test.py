@@ -12,6 +12,17 @@ OUT = ROOT / "test_build"
 shutil.rmtree(OUT, ignore_errors=True)
 OUT.mkdir()
 
+# generate the /brand/ marketing pack into site/ before processing
+import brand_pack
+brand_pack.build(SITE)
+
+# copy shared images the brand pages reference
+(OUT / "images").mkdir()
+for f in ("logo.png", "logo_mark.svg", "qr_website.png", "qr_vcard.png"):
+    src = SITE / "images" / f
+    if src.exists():
+        (OUT / "images" / f).write_bytes(src.read_bytes())
+
 img = Image.open(SITE / "images/logo.png")
 b = io.BytesIO(); img.resize((160, 160), Image.LANCZOS).save(b, "PNG", optimize=True)
 logo = "data:image/png;base64," + base64.b64encode(b.getvalue()).decode()
@@ -33,7 +44,7 @@ for f in SITE.rglob("index.html"):
     h = h.replace('<img class="mark" src="/images/logo_mark.svg" alt="">', '<span class="mark markbg"></span>')
     h = re.sub(r'<link rel="(icon|apple-touch-icon)[^>]*>\n?', "", h)
     h = h.replace('="/wp-content/', '="https://handymanaxarquia.com/wp-content/')
-    h = re.sub(r'(href|src|action)="/(?!/)', rf'\1="{PREFIX}/', h)
+    h = re.sub(r'(href|src|action|value)="/(?!/)', rf'\1="{PREFIX}/', h)
     h = h.replace("<title>", '<meta name="robots" content="noindex, nofollow">\n<title>', 1)
     h = re.sub(r"\n\s+", "\n", h)
     dest = OUT / f.relative_to(SITE)
