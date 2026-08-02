@@ -118,9 +118,9 @@ section.alt { background: var(--wash); }
 .card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,.08); }
 .card .ico {
   width: 46px; height: 46px; border-radius: 12px; margin-bottom: 16px;
-  background: rgba(251,169,23,.14); border: 1.5px solid rgba(251,169,23,.5);
+  background: var(--black);
   display: flex; align-items: center; justify-content: center;
-  color: var(--orange-dark); font-size: 21px;
+  color: var(--orange); font-size: 21px;
 }
 .card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
 .card p { color: var(--muted); font-size: .92rem; }
@@ -203,8 +203,8 @@ section.alt { background: var(--wash); }
 .cinfo .row { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
 .cinfo .ico {
   width: 46px; height: 46px; border-radius: 12px; flex: 0 0 auto;
-  background: rgba(251,169,23,.14); border: 1.5px solid rgba(251,169,23,.5);
-  display: flex; align-items: center; justify-content: center; color: var(--orange-dark); font-size: 20px;
+  background: var(--black);
+  display: flex; align-items: center; justify-content: center; color: var(--orange); font-size: 20px;
 }
 .cinfo .label { font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
 .cinfo .val { font-weight: 600; }
