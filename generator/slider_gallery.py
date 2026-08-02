@@ -4,8 +4,12 @@ from pathlib import Path
 from content_en import GALLERY_PAIRS, u
 from helpers import cta_band
 
-_MARK = "data:image/svg+xml;base64," + base64.b64encode(
-    (Path(__file__).resolve().parent.parent / "site/images/logo_mark.svg").read_bytes()).decode()
+import io
+from PIL import Image
+_img = Image.open(Path(__file__).resolve().parent.parent / "site/images/logo.png")
+_buf = io.BytesIO()
+_img.resize((96, 96), Image.LANCZOS).save(_buf, "PNG", optimize=True)
+_LOGO = "data:image/png;base64," + base64.b64encode(_buf.getvalue()).decode()
 
 STYLE = """<style>
 .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
@@ -20,9 +24,8 @@ STYLE = """<style>
 }
 .cmp-handle::after {
   content: ""; position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%;
-  background: var(--black) url(__MARK__) center/52% no-repeat;
-  border: 2px solid rgba(255,255,255,.9);
+  transform: translate(-50%, -50%); width: 46px; height: 46px; border-radius: 50%;
+  background: url(__MARK__) center/cover no-repeat;
   box-shadow: 0 4px 14px rgba(0,0,0,.4);
 }
 .cmp input[type=range] {
@@ -66,7 +69,7 @@ def gallery_body_slider(lang, ui):
   </div>
   <h3>{cap_en if en else cap_sv}</h3>
 </div>""" for b, a, cap_en, cap_sv in GALLERY_PAIRS[:6])
-    return f"""{STYLE.replace("__MARK__", _MARK)}<div class="page-hero"><div class="container">
+    return f"""{STYLE.replace("__MARK__", _LOGO)}<div class="page-hero"><div class="container">
   <h1>{title}</h1>
   <p class="lead">{sub}</p>
 </div></div>
@@ -75,3 +78,5 @@ def gallery_body_slider(lang, ui):
 </div></section>
 {SCRIPT}
 {cta_band(lang, ui, u)}"""
+"""
+"""
