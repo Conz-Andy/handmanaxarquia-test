@@ -15,6 +15,8 @@ OUT.mkdir()
 # generate the /brand/ marketing pack into site/ before processing
 import brand_pack
 brand_pack.build(SITE)
+import qr_fix
+qr_fix.ensure(SITE)
 
 # copy shared images the brand pages reference
 (OUT / "images").mkdir()
