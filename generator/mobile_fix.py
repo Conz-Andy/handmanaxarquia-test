@@ -2,7 +2,11 @@
 # restack the admin bar on small screens. Injected into generated brand pages.
 from pathlib import Path
 
-A4_FIT = """<script>
+A4_FIT = """<style>
+table { border-collapse: separate !important; border-spacing: 0 !important;
+  border-radius: 2mm 2mm 0 0; overflow: hidden; }
+thead th { border-radius: 0 !important; }
+</style><script>
 function fitA4() {
   var p = document.querySelector('.page');
   if (!p) return;
