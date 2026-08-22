@@ -22,6 +22,7 @@ UI = {
     "cta_p": "Free, no-obligation quotes across the Axarquia. Call, WhatsApp or send us a message — we answer the same day.",
     "cta_btn": "Request a free quote",
     "foot_blurb": "Professional building, renovation and property care across the Axarquia and eastern Costa del Sol. Over 25 years of experience, always on time and on budget.",
+    "foot_areas": "Areas we cover: Torre del Mar, Vélez-Málaga, Algarrobo, Caleta de Vélez, Almayate, Nerja, Torrox, Frigiliana, Cómpeta, Viñuela and Rincón de la Victoria.",
     "foot_pages": "Pages",
     "foot_rights": "All rights reserved.",
     "spain": "Spain",
@@ -44,7 +45,7 @@ REFORMS_PROSE = """
 <p>Every reform starts with a free visit and a written quotation that itemises labour and materials, so you can see exactly where your budget goes. We ask for a 50% deposit to schedule the work and order materials; the balance is only due when the job is finished and you are happy. Unforeseen issues — and older Spanish properties do like to hide them — are always priced and agreed in writing before we carry on.</p>
 <p>We are used to working for owners who are not in Spain full-time. Many of our clients in Nerja, Torrox and the villages of the Axarquia follow their reform through weekly photo updates on WhatsApp, and come back to a finished, cleaned property.</p>
 <h2>Reforms across the Axarquia</h2>
-<p>Based in Almayate, we carry out reforms in Torre del Mar, Vélez-Málaga, Nerja, Torrox, Caleta de Vélez, Algarrobo and throughout the Axarquia region. Country properties and cortijos are welcome — we know the access, water and power challenges that come with them.</p>
+<p>Based in Almayate, we carry out reforms in Torre del Mar, Vélez-Málaga, Nerja, Torrox, Caleta de Vélez, Algarrobo, Frigiliana, Cómpeta, Viñuela, Rincón de la Victoria and throughout the Axarquia region. Country properties and cortijos are welcome — we know the access, water and power challenges that come with them.</p>
 """
 
 PLASTERING_PROSE = """
@@ -277,7 +278,13 @@ def home_body(lang, ui):
   <div class="sec-head">
     <div class="kicker">Where we work</div>
     <h2>Serving the whole Axarquia</h2>
-    <p>Based in Almayate, minutes from Torre del Mar — covering Vélez-Málaga, Nerja, Torrox, Caleta de Vélez, Algarrobo, Cómpeta and the surrounding villages and campo.</p>
+    <p>Based in Almayate, minutes from Torre del Mar — covering Vélez-Málaga, Algarrobo, Caleta de Vélez, Nerja, Torrox, Frigiliana, Cómpeta, Viñuela, Rincón de la Victoria and the surrounding villages and campo.</p>
+    <ul class="tick" style="max-width:760px;margin:18px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:4px 24px;text-align:left">
+      <li>Torre del Mar</li><li>Vélez-Málaga</li><li>Algarrobo</li>
+      <li>Caleta de Vélez</li><li>Almayate</li><li>Nerja</li>
+      <li>Torrox</li><li>Frigiliana</li><li>Cómpeta</li>
+      <li>Viñuela</li><li>Rincón de la Victoria</li><li>Axarquía villages &amp; campo</li>
+    </ul>
   </div>
 </div></section>
 {cta_band(lang, ui, u)}"""
@@ -363,6 +370,8 @@ def contact_body(lang, ui):
         "send": "Send message" if en else "Skicka meddelande",
         "note": ("Prefer WhatsApp? Message us photos of the job on +34 711 027 432 for the fastest reply."
                  if en else "Föredrar du WhatsApp? Skicka bilder på jobbet till +34 711 027 432 för snabbast svar."),
+        "areas": ("We cover Torre del Mar, Vélez-Málaga, Algarrobo, Caleta de Vélez, Almayate, Nerja, Torrox, Frigiliana, Cómpeta, Viñuela and Rincón de la Victoria."
+                  if en else "Vi täcker Torre del Mar, Vélez-Málaga, Algarrobo, Caleta de Vélez, Almayate, Nerja, Torrox, Frigiliana, Cómpeta, Viñuela och Rincón de la Victoria."),
     }
     return f"""<div class="page-hero"><div class="container">
   <h1>{t["h1"]}</h1>
@@ -375,6 +384,7 @@ def contact_body(lang, ui):
     <div class="row"><div class="ico">◔</div><div><div class="label">{t["hours"]}</div><div class="val">{t["hoursv"]}</div></div></div>
     <div class="row"><div class="ico">◈</div><div><div class="label">{t["based"]}</div><div class="val">{t["basedv"]}</div></div></div>
     <p style="color:var(--muted);font-size:.9rem;margin-top:8px">{t["note"]}</p>
+    <p style="color:var(--muted);font-size:.85rem;margin-top:12px">{t["areas"]}</p>
   </div>
   <form class="contact" action="https://formsubmit.co/info@handymanaxarquia.com" method="POST">
     <input type="hidden" name="_subject" value="Website enquiry — handymanaxarquia.com">
@@ -393,7 +403,7 @@ def contact_body(lang, ui):
 PAGES = {}
 PAGES["home"] = {"key": "home",
     "title": "Handyman Axarquia | Builders & Reforms — Torre del Mar, Vélez-Málaga, Nerja",
-    "desc": "Professional building, reforms, plastering, extensions, tiling, bathroom and kitchen renovations across the Axarquia, Costa del Sol. Free quotes. English & Swedish spoken.",
+    "desc": "Professional building, reforms, plastering, extensions, tiling, bathroom and kitchen renovations in Torre del Mar, Nerja, Frigiliana, Cómpeta, Rincón de la Victoria and across the Axarquia. Free quotes.",
     "body": home_body}
 for k, s in SERVICES.items():
     from helpers import service_body as _sb
