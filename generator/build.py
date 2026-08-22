@@ -47,7 +47,9 @@ def head(lang, page, ui):
                     "addressLocality": "Vélez-Málaga", "addressRegion": "Málaga",
                     "postalCode": "29749", "addressCountry": "ES"},
         "geo": {"@type": "GeoCoordinates", "latitude": 36.7386, "longitude": -4.1200},
-        "areaServed": ["Torre del Mar", "Vélez-Málaga", "Nerja", "Torrox", "Almayate", "Axarquía", "Costa del Sol"],
+        "areaServed": ["Torre del Mar", "Vélez-Málaga", "Algarrobo", "Caleta de Vélez", "Almayate",
+                       "Nerja", "Torrox", "Frigiliana", "Cómpeta", "Viñuela",
+                       "Rincón de la Victoria", "Axarquía", "Costa del Sol"],
         "openingHours": "Mo-Fr 08:00-20:00",
         "sameAs": ["https://www.facebook.com/handymanaxarquia"]
     }
@@ -127,6 +129,7 @@ def footer(lang, ui):
         <b style="color:#fff">HANDYMAN <span style="color:var(--orange)">AXARQUIA</span></b>
       </div>
       <p>{ui["foot_blurb"]}</p>
+      <p style="font-size:.8rem;color:#8E8E93;margin-top:10px">{ui["foot_areas"]}</p>
     </div>
     <div>
       <h4>{ui["nav_services"]}</h4>
@@ -167,8 +170,45 @@ def sitemap(urls):
     (SITE / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n'
         f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{entries}\n</urlset>\n')
+    # Allow-all for every crawler, plus explicit named allows for the major AI
+    # answer-engine/search bots so intent is unambiguous if rules are ever tightened.
+    ai_bots = ["GPTBot", "ChatGPT-User", "OAI-SearchBot", "ClaudeBot", "Claude-User",
+               "Claude-Web", "anthropic-ai", "PerplexityBot", "Perplexity-User",
+               "Google-Extended", "Applebot-Extended", "CCBot", "Bytespider", "Amazonbot"]
+    bot_blocks = "\n".join(f"User-agent: {b}\nAllow: /\n" for b in ai_bots)
     (SITE / "robots.txt").write_text(
-        f"User-agent: *\nAllow: /\nSitemap: {BASE_URL}/sitemap.xml\n")
+        f"User-agent: *\nAllow: /\n\n{bot_blocks}\nSitemap: {BASE_URL}/sitemap.xml\n")
+
+def llms_txt():
+    """llms.txt (llmstxt.org convention) — a plain-language summary AI agents/answer
+    engines can read directly instead of scraping the rendered HTML."""
+    (SITE / "llms.txt").write_text(f"""# Handyman Axarquia
+
+> Professional building, reform and property-care company based in Almayate, on the eastern Costa del Sol, Spain. Family-run, 25+ years experience, English and Swedish spoken. Free itemised written quotes, 12-month workmanship guarantee, 50% deposit to book with balance on completion.
+
+## Services
+- Reforms & renovations (full and partial): {BASE_URL}/reforms/
+- Plastering & rendering: {BASE_URL}/plastering/
+- Extensions: {BASE_URL}/extensions/
+- Tiling: {BASE_URL}/tiling/
+- Bathroom renovations: {BASE_URL}/bathrooms/
+- Kitchen renovations: {BASE_URL}/kitchens/
+
+## Areas served
+Torre del Mar, Vélez-Málaga, Algarrobo, Caleta de Vélez, Almayate, Nerja, Torrox, Frigiliana, Cómpeta, Viñuela, Rincón de la Victoria, and the wider Axarquía region and villages, Costa del Sol, Málaga, Spain.
+
+## Contact
+- Phone / WhatsApp: +34 711 027 432
+- Email: info@handymanaxarquia.com
+- Address: Los Toscanos 33, Almayate Bajo, 29749 Málaga, Spain
+- Hours: Mon–Fri 08:00–20:00
+
+## More
+- Homepage: {BASE_URL}/
+- Before & after project gallery: {BASE_URL}/gallery/
+- Contact / free quote: {BASE_URL}/contact/
+- Swedish-language site: {BASE_URL}/sv/
+""")
 
 if __name__ == "__main__":
     urls = []
@@ -177,6 +217,7 @@ if __name__ == "__main__":
     for key, page in SV.items():
         urls.append(write("sv", page, UI_SV))
     sitemap(urls)
+    llms_txt()
     print(f"Built {len(urls)} pages")
     for u in sorted(urls):
         print(" ", u)
