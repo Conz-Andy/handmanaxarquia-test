@@ -18,6 +18,17 @@ for _b64name, _outname in [("logo160.png.b64", "logo.png"), ("logo_mark.svg.b64"
     if _b64path.exists():
         (SITE / "images" / _outname).write_bytes(base64.b64decode(_b64path.read_text()))
 
+# Decode the before/after gallery photos into site/wp-content/uploads/... —
+# the same paths the old WordPress site served them from, so the URLs in
+# GALLERY_PAIRS (and any old links/Google image results) keep working on the
+# static deployment. Filenames use "__" for "/": 2024__02__foo.webp.b64 →
+# wp-content/uploads/2024/02/foo.webp
+for _b64path in sorted((ASSETS_B64 / "gallery").glob("*.b64")):
+    _rel = _b64path.name[:-len(".b64")].replace("__", "/")
+    _out = SITE / "wp-content" / "uploads" / _rel
+    _out.parent.mkdir(parents=True, exist_ok=True)
+    _out.write_bytes(base64.b64decode(_b64path.read_text()))
+
 from content_en import PAGES as EN, UI as UI_EN
 from content_sv import PAGES as SV, UI as UI_SV
 
