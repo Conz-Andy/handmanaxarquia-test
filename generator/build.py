@@ -1,11 +1,22 @@
 #!/usr/bin/env python3
 """Static site generator for handymanaxarquia.com (EN + SV)."""
-import json, shutil
+import base64, json, shutil
 from pathlib import Path
 
 GEN = Path(__file__).parent
 SITE = GEN.parent / "site"
 BASE_URL = "https://handymanaxarquia.com"
+
+# Decode the logo / logo-mark from the base64 sources checked into git. This
+# must happen before anything below is imported: slider_gallery.py opens
+# site/images/logo.png at *import time*, so on a brand-new clone (where
+# site/images/ doesn't exist yet) that import would otherwise crash.
+ASSETS_B64 = GEN.parent / "assets_b64"
+(SITE / "images").mkdir(parents=True, exist_ok=True)
+for _b64name, _outname in [("logo160.png.b64", "logo.png"), ("logo_mark.svg.b64", "logo_mark.svg")]:
+    _b64path = ASSETS_B64 / _b64name
+    if _b64path.exists():
+        (SITE / "images" / _outname).write_bytes(base64.b64decode(_b64path.read_text()))
 
 from content_en import PAGES as EN, UI as UI_EN
 from content_sv import PAGES as SV, UI as UI_SV
