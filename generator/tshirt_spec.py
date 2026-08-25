@@ -51,7 +51,7 @@ body { font-family:'Poppins',sans-serif; background:#232326; }
 .frow .fmeta b, .fnote b { color:#d6d6da; font-weight:500; }
 .fnote { margin-top:14px; padding-top:12px; border-top:1px solid #303034; }
 .spec-card ul { list-style:none; }
-.spec-card li { color:#9a9aa0; font-size:.76rem; line-height:1.85; padding-left:15px; position:relative; }
+.spec-card li { color:#9a9aa0; font-size:.76rem; line-height:1.85; padding-left:15px; position:relative; overflow-wrap:anywhere; }
 .spec-card li::before { content:"\\203A"; position:absolute; left:0; color:#FBA917; font-weight:700; }
 .spec-card li b { color:#d6d6da; font-weight:500; }
 .spec-note { color:#6E6E73; font-size:.72rem; line-height:1.75; margin-top:18px; }
@@ -91,9 +91,11 @@ EN = {
                "Supply artwork with text <b>converted to outlines</b>."),
     "back_print": [
         "Placement: <b>back, across the shoulders</b>",
-        "Print width: <b>30 cm</b> &middot; top edge <b>&asymp; 8 cm</b> below the collar",
+        "Print size: <b>30 &times; 4.3 cm</b> with contact details, <b>30 &times; 2.3 cm</b> wordmark only",
+        "Top edge <b>&asymp; 8 cm</b> below the collar seam, centred",
         "Method: <b>DTF transfer</b> (direct-to-film), heat applied",
-        "Artwork: <b>HA_Back_Wordmark_30cm_TRANSPARENT_300dpi.png</b>",
+        "Artwork, with contact: <b>HA_Back_Wordmark_Phone_30cm_TRANSPARENT_300dpi.png</b>",
+        "Artwork, wordmark only: <b>HA_Back_Wordmark_30cm_TRANSPARENT_300dpi.png</b>",
         "Resolution: <b>300 DPI</b>, transparent background, no white box",
         "Press: <b>150&ndash;160 &deg;C, 15 s, medium pressure</b> &mdash; confirm with supplier",
         "Two print colours only: <b>white + #FBA917</b>",
@@ -141,9 +143,11 @@ ES = {
                "Enviar el arte con el texto <b>convertido a curvas</b>."),
     "back_print": [
         "Colocaci&oacute;n: <b>espalda, a lo ancho de los hombros</b>",
-        "Ancho de impresi&oacute;n: <b>30 cm</b> &middot; borde superior <b>&asymp; 8 cm</b> bajo el cuello",
+        "Tama&ntilde;o: <b>30 &times; 4,3 cm</b> con datos de contacto, <b>30 &times; 2,3 cm</b> solo logotipo",
+        "Borde superior <b>&asymp; 8 cm</b> bajo la costura del cuello, centrado",
         "M&eacute;todo: <b>transfer DTF</b> (direct-to-film), aplicado con calor",
-        "Arte final: <b>HA_Back_Wordmark_30cm_TRANSPARENT_300dpi.png</b>",
+        "Arte con contacto: <b>HA_Back_Wordmark_Phone_30cm_TRANSPARENT_300dpi.png</b>",
+        "Arte solo logotipo: <b>HA_Back_Wordmark_30cm_TRANSPARENT_300dpi.png</b>",
         "Resoluci&oacute;n: <b>300 PPP</b>, fondo transparente, sin recuadro blanco",
         "Plancha: <b>150&ndash;160 &deg;C, 15 s, presi&oacute;n media</b> &mdash; confirmar con el proveedor",
         "Solo dos colores de impresi&oacute;n: <b>blanco + #FBA917</b>",
