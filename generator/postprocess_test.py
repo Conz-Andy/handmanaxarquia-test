@@ -13,6 +13,8 @@ shutil.rmtree(OUT, ignore_errors=True)
 OUT.mkdir()
 
 # generate the /brand/ marketing pack into site/ before processing
+import logo_fix
+logo_fix.apply(SITE)
 import brand_pack
 brand_pack.build(SITE)
 import qr_fix
