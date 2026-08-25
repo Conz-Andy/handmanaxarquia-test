@@ -42,7 +42,7 @@ REFORMS_PROSE = """
 <li>Painting, flooring, carpentry and all finishing trades</li>
 </ul>
 <h2>How we work</h2>
-<p>Every reform starts with a free visit and a written quotation that itemises labour and materials, so you can see exactly where your budget goes. We ask for a 50% deposit to schedule the work and order materials; the balance is only due when the job is finished and you are happy. Unforeseen issues — and older Spanish properties do like to hide them — are always priced and agreed in writing before we carry on.</p>
+<p>Every reform starts with a free visit and a clear written quotation, so you can see exactly where your budget goes. We ask for a 50% deposit to schedule the work and order materials; the balance is only due when the job is finished and you are happy. Unforeseen issues — and older Spanish properties do like to hide them — are always priced and agreed in writing before we carry on.</p>
 <p>We are used to working for owners who are not in Spain full-time. Many of our clients in Nerja, Torrox and the villages of the Axarquia follow their reform through weekly photo updates on WhatsApp, and come back to a finished, cleaned property.</p>
 <h2>Reforms across the Axarquia</h2>
 <p>Based in Almayate, we carry out reforms in Torre del Mar, Vélez-Málaga, Nerja, Torrox, Caleta de Vélez, Algarrobo, Frigiliana, Cómpeta, Viñuela, Rincón de la Victoria and throughout the Axarquia region. Country properties and cortijos are welcome — we know the access, water and power challenges that come with them.</p>
@@ -96,7 +96,7 @@ TILING_PROSE = """
 <h2>Terraces that don't leak</h2>
 <p>A huge share of the leaks we repair in the Axarquia start with a terrace tiled straight onto old surfaces with no membrane. We waterproof first, then tile, with the correct falls and expansion joints, so water goes to the drain instead of into the bedroom below.</p>
 <h2>Supply or labour-only</h2>
-<p>Choose your own tiles from any local supplier — we're happy to recommend showrooms in Torre del Mar and Vélez-Málaga — or tell us the look you want and we'll source options within your budget. Either way you get a written quote per square metre with preparation and materials itemised.</p>
+<p>Choose your own tiles from any local supplier — we're happy to recommend showrooms in Torre del Mar and Vélez-Málaga — or tell us the look you want and we'll source options within your budget. Either way you get a clear written quote per square metre, agreed before we start.</p>
 """
 
 BATHROOMS_PROSE = """
@@ -113,7 +113,7 @@ BATHROOMS_PROSE = """
 <h2>Designed around real use</h2>
 <p>Holiday home, rental property or full-time residence — each needs different choices. Rentals need robust, easy-clean surfaces and fittings that survive guests; retirement homes benefit from level access and grab-rail-ready walls. We'll advise on what actually works, not just what looks good in a showroom.</p>
 <h2>A clear, fixed process</h2>
-<p>You get an itemised quote, a start date and a realistic duration. We protect the rest of your home, manage our own waste, and keep water off for the shortest time possible — usually you're never without a working bathroom overnight when the property has a second one.</p>
+<p>You get a clear written quote, a start date and a realistic duration. We protect the rest of your home, manage our own waste, and keep water off for the shortest time possible — usually you're never without a working bathroom overnight when the property has a second one.</p>
 """
 
 KITCHENS_PROSE = """
@@ -140,12 +140,12 @@ def _svc(key, title, desc, h1, lead, prose, faqs):
 SERVICES = {
 "reforms": _svc("reforms",
     "Property Reforms in the Axarquia | Handyman Axarquia",
-    "Complete and partial property reforms in Torre del Mar, Vélez-Málaga, Nerja and across the Axarquia. One team, itemised quotes, 12-month guarantee. Free quotes.",
+    "Complete and partial property reforms in Torre del Mar, Vélez-Málaga, Nerja and across the Axarquia. One team, clear written quotes, 12-month guarantee. Free quotes.",
     "Property reforms in the Axarquia, done properly",
     "Full and partial reforms for apartments, townhouses and country properties — managed end to end by one experienced team on the eastern Costa del Sol.",
     REFORMS_PROSE,
     [("How much does a property reform cost in the Axarquia?",
-      "It depends on scope and finish, but as a guide: a light cosmetic reform (paint, floors, doors) starts from a few thousand euros per room, while full reforms of apartments typically run from €600–€1,000 per square metre. Every quote we give is itemised so you can adjust the scope to your budget."),
+      "It depends on scope and finish, but as a guide: a light cosmetic reform (paint, floors, doors) starts from a few thousand euros per room, while full reforms of apartments typically run from €600–€1,000 per square metre. Every quote we give is clear and detailed so you can adjust the scope to your budget."),
      ("How long does a full reform take?",
       "A one-bedroom apartment reform typically takes 4–6 weeks; a full townhouse 2–4 months depending on structural work. You get a schedule with the quote and weekly progress updates."),
      ("Can you manage the reform while I'm not in Spain?",
@@ -185,12 +185,12 @@ SERVICES = {
 
 "tiling": _svc("tiling",
     "Tiling Services in the Axarquia | Handyman Axarquia",
-    "Professional floor, wall, bathroom and terrace tiling in Torre del Mar, Vélez-Málaga, Nerja and the Axarquia. Waterproofing done right. Free itemised quotes.",
+    "Professional floor, wall, bathroom and terrace tiling in Torre del Mar, Vélez-Málaga, Nerja and the Axarquia. Waterproofing done right. Free written quotes.",
     "Professional tiling in the Axarquia",
     "Floors, walls, bathrooms, kitchens and terraces — set out properly, cut cleanly and sealed to last, anywhere on the eastern Costa del Sol.",
     TILING_PROSE,
     [("How much does tiling cost per square metre?",
-      "Labour for standard-format floor tiling typically runs €25–€40 per m² in the Axarquia, with walls, large formats, natural stone and terraces priced higher due to preparation and cutting. Your quote itemises labour, preparation and materials separately."),
+      "Labour for standard-format floor tiling typically runs €25–€40 per m² in the Axarquia, with walls, large formats, natural stone and terraces priced higher due to preparation and cutting. Your quote sets out the full cost clearly before we start."),
      ("My terrace leaks into the room below — can tiling fix it?",
       "Tiles alone don't waterproof anything. We strip back, apply a proper waterproof membrane with correct falls, then tile. That combination fixes the leak permanently — it's one of our most common jobs."),
      ("Can you tile over existing tiles?",
@@ -205,7 +205,7 @@ SERVICES = {
     "Strip-out to silicone in one to two weeks — plumbing, waterproofing, tiling and fitting by one team, with a written fixed quote.",
     BATHROOMS_PROSE,
     [("How much does a bathroom renovation cost?",
-      "A complete standard-size bathroom refit in the Axarquia typically runs €4,500–€9,000 depending on fittings and tiles, with wet rooms and premium finishes above that. Your quote itemises everything so you can adjust choices to budget."),
+      "A complete standard-size bathroom refit in the Axarquia typically runs €4,500–€9,000 depending on fittings and tiles, with wet rooms and premium finishes above that. Your quote sets everything out clearly so you can adjust choices to budget."),
      ("How long will I be without a bathroom?",
       "A typical full refit takes 7–12 working days. Water is only off for short periods, and where the property has a second bathroom you'll never be without one overnight."),
      ("Can you convert my bath to a walk-in shower?",
@@ -268,7 +268,7 @@ def home_body(lang, ui):
     <h2>One team. One quote. No surprises.</h2>
   </div>
   <div class="grid c2">
-    <div class="card"><div class="ico">✎</div><h3>Itemised written quotes</h3><p>Labour and materials listed line by line, so you always know where your budget goes. 50% deposit to book, balance only on completion.</p></div>
+    <div class="card"><div class="ico">✎</div><h3>Clear written quotes</h3><p>A detailed written quotation before we start, so you always know where your budget goes. 50% deposit to book, balance only on completion.</p></div>
     <div class="card"><div class="ico">⌂</div><h3>We work for absent owners</h3><p>Abroad most of the year? Most of our clients are. Weekly photo updates on WhatsApp, keys handled securely, property left clean.</p></div>
     <div class="card"><div class="ico">✓</div><h3>Guaranteed workmanship</h3><p>Every job carries a 12-month workmanship guarantee, and materials keep their manufacturer's warranty.</p></div>
     <div class="card"><div class="ico">☏</div><h3>Fast, honest answers</h3><p>Call or WhatsApp between 8:00 and 20:00 weekdays. If a job isn't right for us, we'll say so and point you to someone good.</p></div>
