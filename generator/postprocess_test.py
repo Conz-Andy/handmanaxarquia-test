@@ -17,6 +17,8 @@ import brand_pack
 brand_pack.build(SITE)
 import qr_fix
 qr_fix.ensure(SITE)
+import tshirt_spec
+tshirt_spec.apply(SITE)
 import mobile_fix
 mobile_fix.apply(SITE)
 
@@ -57,5 +59,3 @@ for f in SITE.rglob("index.html"):
 (OUT / "robots.txt").write_text("User-agent: *\nDisallow: /\n")
 (OUT / ".nojekyll").write_text("")
 print("test build ready:", sum(1 for _ in OUT.rglob("*") if _.is_file()), "files")
-"""
-"""
