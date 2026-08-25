@@ -4,6 +4,8 @@
 # method — in English or Spanish via a language switch. Runs after brand_pack.build().
 from pathlib import Path
 
+import placement
+
 PHONE = "+34 711 027 432"
 WEB = "handymanaxarquia.com"
 
@@ -56,7 +58,7 @@ body { font-family:'Poppins',sans-serif; background:#232326; }
 [data-lang] { display:none; }
 [data-lang].on { display:block; }
 .spec-grid[data-lang].on { display:grid; }
-"""
+""" + placement.CSS
 
 # ---------------------------------------------------------------- copy
 
@@ -258,6 +260,7 @@ def _page(title, w, h, inner, side):
     </div>
   </div>
   {_grid(en, side, " on")}{_grid(es, side, "")}
+  {placement.block(side, "en")}{placement.block(side, "es")}
   <div class="spec-note on" data-lang="en">{en["note"]}</div>
   <div class="spec-note" data-lang="es">{es["note"]}</div>
 </div>{SWITCH_JS}</body></html>"""
