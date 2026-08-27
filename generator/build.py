@@ -38,6 +38,7 @@ for _base, _paths in _gallery.items():
 
 from content_en import PAGES as EN, UI as UI_EN
 from content_sv import PAGES as SV, UI as UI_SV
+from reviews import reviews_html, FACEBOOK_URL, FB_SVG
 
 try:
     from slider_gallery import gallery_body_slider
@@ -174,6 +175,7 @@ def footer(lang, ui):
       <h4>{ui["nav_contact"]}</h4>
       <a href="tel:+34711027432">+34 711 027 432</a>
       <a href="mailto:info@handymanaxarquia.com">info@handymanaxarquia.com</a>
+      <a href="{FACEBOOK_URL}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px"><span style="display:inline-flex;width:15px;height:15px;color:#1877F2">{FB_SVG}</span>Facebook</a>
       <p style="margin-top:8px">Los Toscanos 33, Almayate Bajo<br>29749 Málaga, {ui["spain"]}</p>
     </div>
   </div>
@@ -184,7 +186,10 @@ def footer(lang, ui):
 </html>"""
 
 def render(lang, page, ui):
-    return head(lang, page, ui) + header(lang, page, ui) + page["body"](lang, ui) + footer(lang, ui)
+    body = page["body"](lang, ui)
+    if page["key"] in ("home", "gallery"):
+        body += reviews_html(lang, ui)
+    return head(lang, page, ui) + header(lang, page, ui) + body + footer(lang, ui)
 
 def write(lang, page, ui):
     url = slug_to_url(lang, page["key"])
@@ -213,7 +218,7 @@ def llms_txt():
     engines can read directly instead of scraping the rendered HTML."""
     (SITE / "llms.txt").write_text(f"""# Handyman Axarquia
 
-> Professional building, reform and property-care company based in Almayate, on the eastern Costa del Sol, Spain. Family-run, 25+ years experience, English and Swedish spoken. Free itemised written quotes, 12-month workmanship guarantee, 50% deposit to book with balance on completion.
+> Professional building, reform and property-care company based in Almayate, on the eastern Costa del Sol, Spain. Family-run, 35+ years experience, English and Swedish spoken. Free written quotes, 12-month workmanship guarantee, 50% deposit to book with balance on completion.
 
 ## Services
 - Reforms & renovations (full and partial): {BASE_URL}/reforms/
