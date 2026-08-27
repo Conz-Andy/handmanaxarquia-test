@@ -1,7 +1,8 @@
 # Before/after comparison-slider gallery (drag the handle to sweep between photos).
 import base64
 from pathlib import Path
-from content_en import GALLERY_PAIRS, u
+from gallery_data import GALLERY_PAIRS
+from content_en import u
 from helpers import cta_band
 
 import io
@@ -15,7 +16,7 @@ STYLE = """<style>
 .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
 .ba-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .ba-card h3 { font-size: .96rem; font-weight: 600; padding: 14px 18px; }
-.cmp { position: relative; aspect-ratio: 16/10; overflow: hidden; background: var(--panel); --p: 50%; }
+.cmp { position: relative; aspect-ratio: 3/4; overflow: hidden; background: var(--panel); --p: 50%; }
 .cmp img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .cmp .cmp-before { clip-path: inset(0 calc(100% - var(--p)) 0 0); }
 .cmp-handle {
@@ -68,7 +69,7 @@ def gallery_body_slider(lang, ui):
     <input type="range" min="2" max="98" value="50" aria-label="{'Compare before and after' if en else 'Jämför före och efter'}">
   </div>
   <h3>{cap_en if en else cap_sv}</h3>
-</div>""" for b, a, cap_en, cap_sv in GALLERY_PAIRS[:6])
+</div>""" for b, a, cap_en, cap_sv in GALLERY_PAIRS)
     return f"""{STYLE.replace("__MARK__", _LOGO)}<div class="page-hero"><div class="container">
   <h1>{title}</h1>
   <p class="lead">{sub}</p>
