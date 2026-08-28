@@ -205,7 +205,7 @@ SERVICES = {
     "Strip-out to silicone in one to two weeks — plumbing, waterproofing, tiling and fitting by one team, with a written fixed quote.",
     BATHROOMS_PROSE,
     [("How much does a bathroom renovation cost?",
-      "A complete standard-size bathroom refit in the Axarquia typically runs €4,500–€9,000 depending on fittings and tiles, with wet rooms and premium finishes above that. Your quote itemises everything so you can adjust choices to budget."),
+      "A complete standard-size bathroom refit in the Axarquia typically runs €4,500–€9,000 depending on fittings and tiles, with wet rooms and premium finishes above that. You get a free written quote before we start, so you can adjust choices to budget."),
      ("How long will I be without a bathroom?",
       "A typical full refit takes 7–12 working days. Water is only off for short periods, and where the property has a second bathroom you'll never be without one overnight."),
      ("Can you convert my bath to a walk-in shower?",
