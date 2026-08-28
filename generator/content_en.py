@@ -366,9 +366,10 @@ def contact_body(lang, ui):
     <p style="color:var(--muted);font-size:.9rem;margin-top:8px">{t["note"]}</p>
     <p style="color:var(--muted);font-size:.85rem;margin-top:12px">{t["areas"]}</p>
   </div>
-  <form class="contact" action="https://formsubmit.co/info@handymanaxarquia.com" method="POST">
+  <form class="contact" id="qform" action="#" method="POST">
     <input type="hidden" name="_subject" value="Website enquiry — handymanaxarquia.com">
     <input type="hidden" name="_captcha" value="true">
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
     <label>{t["name"]}</label><input type="text" name="name" required>
     <label>{t["mail"]}</label><input type="email" name="email" required>
     <label>{t["phone"]}</label><input type="tel" name="phone">
@@ -376,7 +377,8 @@ def contact_body(lang, ui):
     <label>{t["msg"]}</label><textarea name="message" rows="5" required></textarea>
     <button type="submit">{t["send"]}</button>
   </form>
-</div></section>"""
+</div></section>
+<script>document.getElementById('qform').addEventListener('submit',function(){{this.action='https://formsubmit.co/'+atob('aW5mb0BoYW5keW1hbmF4YXJxdWlhLmNvbQ==');}});</script>"""
 
 # ---------------------------------------------------------------- assemble
 
