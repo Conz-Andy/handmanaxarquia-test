@@ -54,6 +54,12 @@ nav.main a:hover, nav.main a.active { color: var(--orange); }
 .lang { display: flex; gap: 8px; align-items: center; margin-left: 10px; }
 .lang a { font-size: .8rem; color: #8E8E93; font-weight: 600; padding: 3px 8px; border-radius: 6px; }
 .lang a.on { background: var(--orange); color: var(--black); }
+.fb-head {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 6px; background: #1877F2; flex: 0 0 auto;
+}
+.fb-head svg { width: 15px; height: 15px; fill: #fff; display: block; }
+.fb-head:hover { filter: brightness(1.1); }
 .cta-call {
   background: var(--orange); color: var(--black) !important; font-weight: 600;
   padding: 9px 18px; border-radius: 999px; font-size: .9rem !important; white-space: nowrap;
