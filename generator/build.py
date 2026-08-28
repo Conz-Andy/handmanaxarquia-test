@@ -143,6 +143,7 @@ def header(lang, page, ui):
         <a href="{slug_to_url('en', page['key'])}" class="{'on' if lang=='en' else ''}">EN</a>
         <a href="{slug_to_url('sv', page['key'])}" class="{'on' if lang=='sv' else ''}">SV</a>
       </div>
+      <a class="fb-head" href="{FACEBOOK_URL}" target="_blank" rel="noopener" aria-label="Handyman Axarquia on Facebook"><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
       <a class="cta-call" href="tel:+34711027432">✆ +34 711 027 432</a>
     </nav>
   </div>
