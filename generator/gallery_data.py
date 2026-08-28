@@ -24,4 +24,7 @@ GALLERY_PAIRS = [
     (f"{_G}/handyman-axarquia-livingroom-logburner-before.webp",
      f"{_G}/handyman-axarquia-livingroom-logburner-after.webp",
      "Chimney removal & log burner installation", "Rivning av öppen spis & installation av braskamin"),
+    (f"{_G}/handyman-axarquia-pergola-vinuela-before.webp",
+     f"{_G}/handyman-axarquia-pergola-vinuela-after.webp",
+     "Pergola & printed-concrete driveway, Viñuela", "Pergola & mönstergjuten uppfart, Viñuela"),
 ]
