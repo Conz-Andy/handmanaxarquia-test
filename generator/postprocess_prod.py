@@ -23,6 +23,12 @@ qr_fix.ensure(SITE)
 import mobile_fix
 mobile_fix.apply(SITE)
 
+# the /brand/ marketing pack is an internal tool, not for search engines
+for f in (SITE / 'brand').rglob('index.html'):
+    h = f.read_text()
+    if 'name="robots"' not in h:
+        f.write_text(h.replace('<head>', '<head><meta name="robots" content="noindex,nofollow">', 1))
+
 # real favicon / apple-touch-icon from the logo (postprocess_test.py strips the
 # <link> tags referencing these because they don't exist yet at that point)
 logo_path = SITE / "images/logo.png"

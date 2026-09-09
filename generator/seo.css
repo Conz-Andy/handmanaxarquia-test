@@ -1,0 +1,22 @@
+/* Styles for the area pages, blog and service-page photos (loaded after style.css). */
+.site-foot .cols { grid-template-columns: 1.6fr 1fr 1fr 1.2fr; }
+.svc-photo { margin: 0 0 26px; }
+.svc-photo img { width: 100%; max-height: 420px; object-fit: cover; border-radius: var(--radius); }
+.svc-photo figcaption { font-size: .8rem; color: var(--muted); margin-top: 8px; }
+.post-hero { margin: 0 0 26px; }
+.post-hero img { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius); }
+.post-hero figcaption { font-size: .8rem; color: var(--muted); margin-top: 8px; }
+.prose.post p, .prose.post li { font-size: 1.02rem; line-height: 1.7; }
+.prose.post h2 { margin-top: 38px; }
+.post-meta { font-size: .82rem; color: var(--muted); letter-spacing: .5px; }
+.page-hero .post-meta { color: #B9B9BE; font-size: .9rem; }
+a.card { color: inherit; display: block; }
+.card.post-card img, .card.area-card img { width: calc(100% + 52px); max-width: none; margin: -28px -26px 16px; height: 200px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; }
+.card.post-card .post-meta { margin-bottom: 6px; }
+.card .more { display: inline-block; margin-top: 12px; font-weight: 600; font-size: .88rem; color: var(--orange-dark); }
+.card .more::after { content: " →"; }
+.area-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 26px; }
+.area-chip { display: inline-block; padding: 8px 16px; border-radius: 999px; border: 1.5px solid var(--line); font-size: .88rem; font-weight: 600; color: var(--black); background: #fff; }
+.area-chip:hover { border-color: var(--orange); color: var(--orange-dark); }
+@media (max-width: 900px) { .card.post-card img, .card.area-card img { height: 170px; } }
+@media (max-width: 920px) { .site-foot .cols { grid-template-columns: 1fr 1fr; } }
