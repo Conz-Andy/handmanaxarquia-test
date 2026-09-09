@@ -20,7 +20,7 @@ UI = {
     "cta_p": "Kostnadsfria offerter i hela Axarquía. Ring, skriv på WhatsApp eller skicka ett meddelande — vi svarar samma dag, på svenska eller engelska.",
     "cta_btn": "Begär kostnadsfri offert",
     "foot_blurb": "Professionellt bygg-, renoverings- och fastighetsarbete i Axarquía och östra Costa del Sol. Över 35 års erfarenhet — alltid i tid och inom budget.",
-    "foot_areas": "Vi arbetar i: Torre del Mar, Vélez-Málaga, Algarrobo, Caleta de Vélez, Almayate, Nerja, Torrox, Frigiliana, Cómpeta, Viñuela och Rincón de la Victoria.",
+    "foot_areas": "Vi arbetar i: Torre del Mar, Vélez-Málaga, Algarrobo, Caleta de Vélez, Almayate, Nerja, Torrox, Frigiliana, Viñuela och Rincón de la Victoria.",
     "foot_pages": "Sidor",
     "foot_rights": "Alla rättigheter förbehållna.",
     "spain": "Spanien",
@@ -41,7 +41,7 @@ REFORMS_PROSE = """
 <p>Varje renovering börjar med ett kostnadsfritt besök och en kostnadsfri skriftlig offert utan förpliktelser. Vi tar 50 % handpenning för att boka in arbetet och beställa material; resten betalas först när jobbet är klart och du är nöjd. Oförutsedda problem — och äldre spanska hus gillar att gömma sådana — prissätts och godkänns alltid skriftligt innan vi fortsätter.</p>
 <p>Vi är vana att arbeta åt ägare som inte bor i Spanien året runt. Många av våra kunder i Nerja, Torrox och byarna i Axarquía följer sin renovering via veckovisa fotouppdateringar på WhatsApp — och kommer tillbaka till ett färdigt, städat hem.</p>
 <h2>Renoveringar i hela Axarquía</h2>
-<p>Med bas i Almayate utför vi renoveringar i Torre del Mar, Vélez-Málaga, Nerja, Torrox, Caleta de Vélez, Algarrobo, Frigiliana, Cómpeta, Viñuela, Rincón de la Victoria och i hela Axarquía. Även lanthus och cortijos — vi känner väl till utmaningarna med tillfart, vatten och el på landsbygden.</p>
+<p>Med bas i Almayate utför vi renoveringar i Torre del Mar, Vélez-Málaga, Nerja, Torrox, Caleta de Vélez, Algarrobo, Frigiliana, Viñuela, Rincón de la Victoria och i hela Axarquía. Även lanthus och cortijos — vi känner väl till utmaningarna med tillfart, vatten och el på landsbygden.</p>
 """
 
 PLASTERING_PROSE = """
@@ -264,7 +264,7 @@ def home_body(lang, ui):
     <h2>Ett team. En offert. Inga överraskningar.</h2>
   </div>
   <div class="grid c2">
-    <div class="card"><div class="ico">✎</div><h3>Specificerade skriftliga offerter</h3><p>Arbete och material rad för rad, så att du alltid vet vart budgeten går. 50 % handpenning vid bokning, resten först vid färdigställande.</p></div>
+    <div class="card"><div class="ico">✎</div><h3>Kostnadsfria skriftliga offerter</h3><p>En tydlig skriftlig offert för varje jobb, utan förpliktelser och utan överraskningar. 50 % handpenning vid bokning, resten först vid färdigställande.</p></div>
     <div class="card"><div class="ico">⌂</div><h3>Vi arbetar åt ägare på distans</h3><p>Utomlands större delen av året? Det är de flesta av våra kunder. Fotouppdateringar varje vecka på WhatsApp, säker nyckelhantering och städat efter oss.</p></div>
     <div class="card"><div class="ico">✓</div><h3>Garanterat hantverk</h3><p>Alla arbeten har 12 månaders garanti, och material behåller tillverkarens garanti.</p></div>
     <div class="card"><div class="ico">☏</div><h3>Snabba, ärliga svar</h3><p>Ring eller skriv på WhatsApp vardagar 8–20. Passar ett jobb oss inte säger vi det — och tipsar om någon bra.</p></div>
@@ -274,11 +274,11 @@ def home_body(lang, ui):
   <div class="sec-head">
     <div class="kicker">Var vi arbetar</div>
     <h2>Hela Axarquía</h2>
-    <p>Med bas i Almayate, några minuter från Torre del Mar — vi täcker Vélez-Málaga, Algarrobo, Caleta de Vélez, Nerja, Torrox, Frigiliana, Cómpeta, Viñuela, Rincón de la Victoria samt byarna och campon runt omkring.</p>
+    <p>Med bas i Almayate, några minuter från Torre del Mar — vi täcker Vélez-Málaga, Algarrobo, Caleta de Vélez, Nerja, Torrox, Frigiliana, Viñuela, Rincón de la Victoria samt byarna och campon runt omkring.</p>
     <ul class="tick" style="max-width:760px;margin:18px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:4px 24px;text-align:left">
       <li>Torre del Mar</li><li>Vélez-Málaga</li><li>Algarrobo</li>
       <li>Caleta de Vélez</li><li>Almayate</li><li>Nerja</li>
-      <li>Torrox</li><li>Frigiliana</li><li>Cómpeta</li>
+      <li>Torrox</li><li>Frigiliana</li><li>Sayalonga</li>
       <li>Viñuela</li><li>Rincón de la Victoria</li><li>Byar &amp; campo i Axarquía</li>
     </ul>
   </div>
@@ -299,7 +299,7 @@ HOME_CARDS = {
 PAGES = {}
 PAGES["home"] = {"key": "home", "slug": "",
     "title": "Handyman Axarquia | Bygg & renovering — Torre del Mar, Vélez-Málaga, Nerja",
-    "desc": "Professionell bygg- och renoveringsfirma i Torre del Mar, Nerja, Frigiliana, Cómpeta, Rincón de la Victoria och hela Axarquía, Costa del Sol. Kostnadsfria offerter. Vi talar svenska.",
+    "desc": "Professionell bygg- och renoveringsfirma i Torre del Mar, Nerja, Frigiliana, Rincón de la Victoria och hela Axarquía, Costa del Sol. Kostnadsfria offerter. Vi talar svenska.",
     "body": home_body}
 for k, s in SERVICES.items():
     s["body"] = service_body(s, u)

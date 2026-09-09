@@ -322,6 +322,11 @@ def render_core(lang, page, ui):
     if key in ("home", "gallery"):
         body += reviews_html(lang, ui)
     if key == "home":
+        # 'Licences & paperwork handled' band, inserted before the "where we work"
+        # section (between it and the "One team / No surprises" section above).
+        where_kicker = '<div class="kicker">Where we work</div>' if lang == "en" else '<div class="kicker">Var vi arbetar</div>'
+        where_anchor = '<section><div class="container">\n  <div class="sec-head">\n    ' + where_kicker
+        body = body.replace(where_anchor, licences_home_block(lang) + where_anchor, 1)
         # area chips inside the "where we work" section, latest articles after it
         anchor = "    </ul>\n  </div>\n</div></section>\n"
         body = body.replace(anchor, "    </ul>\n    " + areas_strip(lang, ui) + "\n  </div>\n</div></section>\n" + blog_strip(lang, ui), 1)
@@ -334,6 +339,37 @@ def render_core(lang, page, ui):
 def areas_strip(lang, ui):
     cards = "".join(f'<a class="area-chip" href="{area_url(lang, k)}">{AREAS[k]["name"]}</a>' for k in AREA_ORDER)
     return f'<div class="area-chips">{cards}</div>'
+
+def licences_home_block(lang):
+    """'Licences & paperwork handled' band for the home page (EN + SV).
+    String-inserted into the home body before the 'where we work' section, so
+    content_en.py / content_sv.py stay untouched. Uses existing .grid.c3 / .card."""
+    en = lang == "en"
+    licence_post = "/blog/building-licence-spain-obra-menor-obra-mayor/" if en \
+        else "/sv/blogg/bygglov-spanien-obra-menor-obra-mayor/"
+    if en:
+        kicker, h2 = "Paperwork", "Licences, comunidad and IVA — handled"
+        cards = [
+            ("Obra menor, prepared for you", "For most refits we prepare and submit the licencia de obra menor paperwork on your behalf, with the budget breakdown the town hall asks for."),
+            ("Obra mayor, coordinated", "For structural work and extensions we introduce local architects we work with regularly and coordinate the project alongside their paperwork."),
+            ("Proper facturas and a guarantee", "Every job comes with a factura and IVA, and a written 12-month workmanship guarantee — the records you need when you come to sell."),
+        ]
+        link = "How Spanish building licences work →"
+    else:
+        kicker, h2 = "Pappersarbete", "Bygglov, comunidad och IVA — ordnat"
+        cards = [
+            ("Obra menor, förberett åt dig", "För de flesta renoveringar förbereder och lämnar vi in handlingarna för licencia de obra menor åt dig, med den kostnadsspecifikation kommunen vill ha."),
+            ("Obra mayor, samordnat", "För bärande arbeten och tillbyggnader presenterar vi lokala arkitekter vi samarbetar med regelbundet och samordnar projektet parallellt med deras papper."),
+            ("Riktiga facturas och en garanti", "Varje jobb kommer med en factura och IVA, och en skriftlig 12-månadersgaranti på arbetet — de papper du behöver den dag du säljer."),
+        ]
+        link = "Så fungerar spanska bygglov →"
+    card_html = "".join(f'<div class="card"><h3>{t}</h3><p>{p}</p></div>' for t, p in cards)
+    return f"""<section class="alt"><div class="container">
+  <div class="sec-head"><div class="kicker">{kicker}</div><h2>{h2}</h2></div>
+  <div class="grid c3">{card_html}</div>
+  <p style="margin-top:22px"><a class="btn primary" href="{licence_post}">{link}</a></p>
+</div></section>
+"""
 
 def area_body(lang, ui, key):
     a = AREAS[key]; c = a[lang]
@@ -399,7 +435,9 @@ def render_areas_index(lang, ui):
 def fmt_date(iso, lang):
     d = datetime.date.fromisoformat(iso)
     if lang == "en":
-        return d.strftime("%-d %B %Y")
+        # %-d (strip leading zero) is glibc-only; build the day portably so the
+        # generator also runs on Windows. Output is identical on the Linux CI.
+        return f"{d.day} {d.strftime('%B %Y')}"
     months = ["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"]
     return f"{d.day} {months[d.month - 1]} {d.year}"
 

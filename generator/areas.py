@@ -292,7 +292,7 @@ AREAS = {
             ("Can you reform my home while we live in it?",
              "Yes. We phase the work room by room, seal off dust and keep essential rooms usable. Most Rincón clients stay in the house throughout."),
             ("How much does a full apartment reform cost in Rincón de la Victoria?",
-             "As a guide, full reforms of apartments run from roughly €600 to €1,000 per square metre depending on finishes. Every quote is itemised in writing so you can adjust scope to budget."),
+             "As a guide, full reforms of apartments run from roughly €600 to €1,000 per square metre depending on finishes. Every quote is free, in writing and valid for 30 days, so you can plan without pressure."),
         ],
     },
     "sv": {
@@ -321,7 +321,7 @@ AREAS = {
             ("Kan ni renovera medan vi bor kvar i huset?",
              "Ja. Vi delar upp arbetet rum för rum, tätar mot damm och håller viktiga rum användbara. De flesta kunder i Rincón bor kvar under hela renoveringen."),
             ("Vad kostar en helrenovering av en lägenhet i Rincón de la Victoria?",
-             "Som riktmärke ligger helrenoveringar av lägenheter på ungefär 600 till 1 000 euro per kvadratmeter beroende på ytskikt. Varje offert är specificerad så att du kan anpassa omfattningen efter budgeten."),
+             "Som riktmärke ligger helrenoveringar av lägenheter på ungefär 600 till 1 000 euro per kvadratmeter beroende på ytskikt. Varje offert är kostnadsfri, skriftlig och gäller i 30 dagar, så du kan planera i lugn och ro."),
         ],
     },
 },
