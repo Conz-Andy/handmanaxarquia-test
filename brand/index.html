@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Marketing Pack — Handyman Axarquia</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Poppins',sans-serif; height:100vh; display:flex; flex-direction:column; background:#232326; }
+.adminbar { background:#0B0B0C; border-bottom:3px solid #FBA917; color:#fff;
+display:flex; align-items:center; gap:16px; padding:10px 18px; flex-wrap:wrap; }
+.adminbar img { width:34px; height:34px; }
+.adminbar b { font-size:.95rem; letter-spacing:.5px; }
+.adminbar b span { color:#FBA917; }
+.adminbar .tag { color:#8E8E93; font-size:.72rem; letter-spacing:2px; text-transform:uppercase; }
+.adminbar select { background:#1c1c1f; color:#fff; border:1px solid #3a3a3e; border-radius:8px;
+padding:8px 12px; font-size:14px; font-family:inherit; min-width:260px; }
+.adminbar .actions { margin-left:auto; display:flex; gap:8px; }
+.adminbar button, .adminbar a.btn { background:#1c1c1f; color:#d6d6da; border:1px solid #3a3a3e;
+border-radius:8px; padding:7px 14px; cursor:pointer; font-size:12.5px; font-family:inherit; text-decoration:none; }
+.adminbar button:hover, .adminbar a.btn:hover { border-color:#FBA917; color:#FBA917; }
+iframe { border:0; flex:1; width:100%; background:#fff; }
+</style><style>
+@media (max-width: 720px) {
+.adminbar { gap: 10px; padding: 10px 12px; }
+.adminbar .tag { display: none; }
+.adminbar b { font-size: .85rem; }
+.adminbar select { min-width: 0; flex: 1 1 100%; order: 3; }
+.adminbar .actions { margin-left: 0; order: 4; width: 100%; }
+.adminbar .actions a, .adminbar .actions button { flex: 1; text-align: center; }
+}
+</style></head><body>
+<div class="adminbar">
+<img src="/handmanaxarquia-test/images/logo.png" alt="">
+<div><b>HANDYMAN <span>AXARQUIA</span></b><div class="tag">Marketing pack</div></div>
+<select id="sel" onchange="go(this.value)"><option value="/handmanaxarquia-test/brand/presupuesto/">💶 Presupuesto — full bundle</option><option value="/handmanaxarquia-test/">🌐 Website (live)</option><option value="/handmanaxarquia-test/brand/invoice/">📄 Invoice</option><option value="/handmanaxarquia-test/brand/quotation/">📄 Quotation</option><option value="/handmanaxarquia-test/brand/letterhead/">📄 Letterhead</option><option value="/handmanaxarquia-test/brand/card-front/">💳 Business card — front</option><option value="/handmanaxarquia-test/brand/card-back/">💳 Business card — back</option><option value="/handmanaxarquia-test/brand/tshirt-front/">👕 T-shirt — front</option><option value="/handmanaxarquia-test/brand/tshirt-back/">👕 T-shirt — back</option></select>
+<div class="actions">
+<a class="btn" id="open" href="/handmanaxarquia-test/brand/presupuesto/" target="_blank">Open full ↗</a>
+<button onclick="document.getElementById('fr').contentWindow.print()">Print / Save PDF</button>
+</div>
+</div>
+<iframe id="fr" src="/handmanaxarquia-test/brand/presupuesto/"></iframe>
+<script>
+function go(u) {
+document.getElementById('fr').src = u;
+document.getElementById('open').href = u;
+}
+</script>
+</body></html>
