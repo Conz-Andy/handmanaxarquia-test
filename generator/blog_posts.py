@@ -216,7 +216,7 @@ POSTS = [
 </ul>
 
 <h2>What is included in our quotes</h2>
-<p>Every bathroom quote we write itemises: strip-out and rubble removal, plumbing and electrical work, tanking, plastering, tiling, fitting of sanitaryware and screen, silicone and finishing, cleaning, and the licencia de obra menor paperwork. Tiles and sanitaryware are listed separately so you can see exactly what you are paying for, and you are free to choose your own from the showrooms in Torre del Mar and Vélez-Málaga.</p>
+<p>Every bathroom quote we give is free, in writing and valid for 30 days. It covers strip-out and rubble removal, plumbing and electrical work, tanking, plastering, tiling, fitting of sanitaryware and screen, silicone and finishing, cleaning, and the licencia de obra menor paperwork. Tiles and sanitaryware are your choice — pick your own from the showrooms in Torre del Mar and Vélez-Málaga, or ask us to source options to your budget.</p>
 
 <h2>How long does it take?</h2>
 <p>A standard refit takes 7–12 working days. Water is off only for short periods, and where the property has a second bathroom you will never be without one overnight. A wet room or a layout change adds a few days for screeding and drying.</p>
@@ -255,7 +255,7 @@ POSTS = [
 </ul>
 
 <h2>Vad som ingår i våra offerter</h2>
-<p>Varje badrumsoffert vi skriver specificerar: rivning och bortforsling, rör- och elarbete, tätskikt, puts, plattsättning, montering av porslin och duschvägg, silikon och finish, städning samt handlingarna för licencia de obra menor. Kakel och porslin listas separat så att du ser exakt vad du betalar för, och du får gärna välja själv i butikerna i Torre del Mar och Vélez-Málaga.</p>
+<p>Varje badrumsoffert vi lämnar är kostnadsfri, skriftlig och gäller i 30 dagar. Den omfattar rivning och bortforsling, rör- och elarbete, tätskikt, puts, plattsättning, montering av porslin och duschvägg, silikon och finish, städning samt handlingarna för licencia de obra menor. Kakel och porslin väljer du själv i butikerna i Torre del Mar och Vélez-Málaga, eller så tar vi fram alternativ efter din budget.</p>
 
 <h2>Hur lång tid tar det?</h2>
 <p>En standardrenovering tar 7–12 arbetsdagar. Vattnet är avstängt bara korta stunder, och om bostaden har ett andra badrum står du aldrig utan över natten. Ett våtrum eller en planändring lägger till några dagar för avjämning och torkning.</p>
@@ -284,8 +284,8 @@ POSTS = [
         "body": """
 <p>Sooner or later, most owners on this coast need a builder — for a leaking terrace, a tired bathroom, a full reform of a place they have just bought. The good ones are busy and worth waiting for; the bad ones cost you twice. This is the checklist we would give a friend buying in Nerja, Torre del Mar or the villages. It works on any builder, ourselves included — measure us against it.</p>
 
-<h2>1. Insist on a written, itemised quote</h2>
-<p>A verbal "about eight thousand" is not a quote. Ask for it in writing, broken down: labour, materials, rubble removal, licence and IVA. An itemised quote tells you the builder has actually thought the job through, and it protects both sides when a decision has to be made half-way through. If someone will only give you a single round number, or scribbles it on the back of a receipt, that tells you how the rest of the job will go.</p>
+<h2>1. Insist on a clear written quote</h2>
+<p>A verbal "about eight thousand" is not a quote. Ask for a written price for the whole job, valid for a set period, that states plainly what is and is not included — labour, materials, rubble removal, the licence and IVA. A proper written quote tells you the builder has actually thought the job through, and it protects both sides when a decision has to be made half-way through. If someone will only give you a single round number over the phone, or scribbles it on the back of a receipt, that tells you how the rest of the job will go. Our own quotes are free, in writing and valid for 30 days.</p>
 
 <h2>2. Understand the deposit and payment stages</h2>
 <p>In Spain it is completely normal to pay a deposit up front — commonly around 50% — because your builder buys materials, sanitaryware and tiles before the first day on site. What is not normal is being asked for 100% before any work starts. A fair structure is a deposit to book and buy materials, one or two stage payments tied to milestones on a longer job, and the final balance only when the work is finished and you are happy. We work to exactly that: 50% to book, balance on completion.</p>
@@ -325,8 +325,8 @@ POSTS = [
         "body": """
 <p>Förr eller senare behöver de flesta bostadsägare på den här kusten en hantverkare — för en läckande terrass, ett slitet badrum eller en helrenovering av något man just köpt. De skickliga är upptagna och värda att vänta på; de dåliga kostar dig dubbelt. Det här är checklistan vi skulle ge en vän som köper i Nerja, Torre del Mar eller byarna. Den fungerar på vilken byggare som helst, oss själva inkluderat — mät oss mot den.</p>
 
-<h2>1. Kräv en skriftlig, specificerad offert</h2>
-<p>Ett muntligt "ungefär åttatusen" är ingen offert. Be att få den skriftligt och uppdelad: arbete, material, bortforsling, bygglov och IVA (moms). En specificerad offert visar att byggaren faktiskt har tänkt igenom jobbet, och den skyddar båda parter när ett beslut måste fattas halvvägs. Om någon bara ger en enda rund summa, eller klottrar den på baksidan av ett kvitto, säger det en hel del om hur resten av jobbet kommer att gå.</p>
+<h2>1. Kräv en tydlig skriftlig offert</h2>
+<p>Ett muntligt "ungefär åttatusen" är ingen offert. Be om ett skriftligt pris för hela jobbet, med en giltighetstid, som tydligt anger vad som ingår och inte ingår — arbete, material, bortforsling, bygglov och IVA (moms). En ordentlig skriftlig offert visar att byggaren faktiskt har tänkt igenom jobbet, och den skyddar båda parter när ett beslut måste fattas halvvägs. Om någon bara ger en enda rund summa i telefon, eller klottrar den på baksidan av ett kvitto, säger det en hel del om hur resten av jobbet kommer att gå. Våra egna offerter är kostnadsfria, skriftliga och gäller i 30 dagar.</p>
 
 <h2>2. Förstå handpenning och delbetalningar</h2>
 <p>I Spanien är det helt normalt att betala en handpenning i förskott — ofta omkring 50 % — eftersom byggaren köper material, porslin och kakel innan första dagen på plats. Det som inte är normalt är att bli ombedd att betala 100 % innan något arbete börjat. Ett rimligt upplägg är en handpenning för att boka och köpa material, en eller två delbetalningar kopplade till etapper på ett längre jobb, och slutbetalning först när arbetet är klart och du är nöjd. Vi arbetar precis så: 50 % för att boka, resten vid färdigställande.</p>
@@ -679,7 +679,7 @@ POSTS = [
 <p>The most popular kitchen change here is opening the kitchen into the living room. If the wall is not load-bearing it is straightforward; if it is, it means a beam and proper structural support, which is an <em>obra mayor</em> with the paperwork that goes with it. Either way the town hall wants a licence, and in an apartment your comunidad needs informing too. We tell you which side of that line your wall falls before we quote.</p>
 
 <h2>5. IVA, facturas and what it costs</h2>
-<p>A proper kitchen job comes with a factura and IVA — worth it for the guarantee and for your records when you sell, as we always advise. On cost, a kitchen refit where we prep and install runs roughly <strong>€3,000 to €7,000</strong>, and a complete high-end kitchen with structural or layout changes runs <strong>€8,000 to €15,000</strong>, units and appliances depending on what you choose. Every quote itemises labour and materials separately so you can see where the money goes and adjust the spec to suit the budget.</p>
+<p>A proper kitchen job comes with a factura and IVA — worth it for the guarantee and for your records when you sell, as we always advise. On cost, a kitchen refit where we prep and install runs roughly <strong>€3,000 to €7,000</strong>, and a complete high-end kitchen with structural or layout changes runs <strong>€8,000 to €15,000</strong>, units and appliances depending on what you choose. Every quote we give is free, in writing and valid for 30 days — a single price for the whole job, so you can plan the spec around your budget before you commit.</p>
 
 <h2>One team for the whole job</h2>
 <p>The reason kitchens go wrong is usually coordination — the plasterer waiting on the electrician waiting on the plumber, and the worktop templated against units that were not level. We run the strip-out, first fix, plastering, tiling and installation as one team on one schedule, whether you supply the kitchen or we do. It is how we work in <a href="/areas/rincon-de-la-victoria/">Rincón de la Victoria</a> and across the coast, and it is why the worktop fits.</p>
@@ -708,7 +708,7 @@ POSTS = [
 <p>Den populäraste köksändringen här är att öppna köket mot vardagsrummet. Är väggen inte bärande är det enkelt; är den det innebär det en balk och ordentligt bärande stöd, vilket är en <em>obra mayor</em> med pappersarbetet som hör till. Hur som helst vill kommunen ha ett bygglov, och i en lägenhet ska din comunidad informeras också. Vi säger vilken sida av gränsen din vägg ligger på innan vi offererar.</p>
 
 <h2>5. IVA, facturas och vad det kostar</h2>
-<p>Ett ordentligt köksjobb kommer med en factura och IVA — värt det för garantin och för dina papper när du säljer, som vi alltid råder. På kostnaden ligger en köksrenovering där vi förbereder och monterar på ungefär <strong>3 000 till 7 000 euro</strong>, och ett komplett exklusivt kök med struktur- eller planändringar på <strong>8 000 till 15 000 euro</strong>, stommar och vitvaror beroende på vad du väljer. Varje offert specificerar arbete och material separat så att du ser vart pengarna går och kan anpassa nivån efter budgeten.</p>
+<p>Ett ordentligt köksjobb kommer med en factura och IVA — värt det för garantin och för dina papper när du säljer, som vi alltid råder. På kostnaden ligger en köksrenovering där vi förbereder och monterar på ungefär <strong>3 000 till 7 000 euro</strong>, och ett komplett exklusivt kök med struktur- eller planändringar på <strong>8 000 till 15 000 euro</strong>, stommar och vitvaror beroende på vad du väljer. Varje offert vi lämnar är kostnadsfri, skriftlig och gäller i 30 dagar — ett samlat pris för hela jobbet, så att du kan planera nivån efter din budget innan du bestämmer dig.</p>
 
 <h2>Ett team för hela jobbet</h2>
 <p>Anledningen till att kök går fel är oftast samordning — plattsättaren väntar på elektrikern som väntar på rörmokaren, och bänkskivan mäts mot stommar som inte var i våg. Vi kör rivning, förberedelser, puts, kakel och montering som ett team på ett schema, oavsett om du köper köket själv eller vi gör det. Så arbetar vi i <a href="/sv/omraden/rincon-de-la-victoria/">Rincón de la Victoria</a> och längs hela kusten, och det är därför bänkskivan passar.</p>
@@ -837,7 +837,7 @@ POSTS = [
 <p>På kusten är frost sällsynt; uppe i byarna och på landet är den det inte, och en vinterfrost spräcker en platta som sög upp vatten i vätan. För allt inåt landet eller utsatt, använd en frostsäker porslinsklinker med mycket låg vattenabsorption. Samma täthet som motstår frost klarar också den dagliga värmeväxlingen på en söderterrass, vilket är det som får billigare plattor att krackelera över några somrar.</p>
 
 <h2>Halksäkert runt pooler och våtytor</h2>
-<p>Runt en pool eller i ett våtrum är halksäkerhet inte valfritt. Plattor har halkklasser — de barfota "A/B/C"-klasserna för våtytor och poolkanter, och de skodda "R"-klasserna — och det finns egna standarder för ytan runt en pool. Vi offererar inte en slät, blank platta för en poolkant hur bra den än ser ut i butiken; rätt val greppar blöta fötter utan att vara så grovt att det inte går att rengöra. Det här är en att specificera noga snarare än efter bild.</p>
+<p>Runt en pool eller i ett våtrum är halksäkerhet inte valfritt. Plattor har halkklasser — de barfota "A/B/C"-klasserna för våtytor och poolkanter, och de skodda "R"-klasserna — och det finns egna standarder för ytan runt en pool. Vi offererar inte en slät, blank platta för en poolkant hur bra den än ser ut i butiken; rätt val greppar blöta fötter utan att vara så grovt att det inte går att rengöra. Det här är ett val att göra noga snarare än efter bild.</p>
 
 <h2>Storformat och nivåskillnader</h2>
 <p>Storformatsplattor är den aktuella looken och de passar dessa ljusa, öppna terrasser — men de är mindre förlåtande. Varje ojämnhet i underlaget visar sig som nivåskillnad, där en plattkant sitter högre än grannens, vilket ser illa ut och får folk att snubbla. Storformat behöver en ordentligt plan, väl förberedd bädd, rätt fästmassa och nivåkilar, och en läggare som tar underlaget på allvar. Det handlar lika mycket om vad som är under plattan som om plattan själv.</p>

@@ -264,7 +264,7 @@ def home_body(lang, ui):
     <h2>Ett team. En offert. Inga överraskningar.</h2>
   </div>
   <div class="grid c2">
-    <div class="card"><div class="ico">✎</div><h3>Specificerade skriftliga offerter</h3><p>Arbete och material rad för rad, så att du alltid vet vart budgeten går. 50 % handpenning vid bokning, resten först vid färdigställande.</p></div>
+    <div class="card"><div class="ico">✎</div><h3>Kostnadsfria skriftliga offerter</h3><p>En tydlig skriftlig offert för varje jobb, utan förpliktelser och utan överraskningar. 50 % handpenning vid bokning, resten först vid färdigställande.</p></div>
     <div class="card"><div class="ico">⌂</div><h3>Vi arbetar åt ägare på distans</h3><p>Utomlands större delen av året? Det är de flesta av våra kunder. Fotouppdateringar varje vecka på WhatsApp, säker nyckelhantering och städat efter oss.</p></div>
     <div class="card"><div class="ico">✓</div><h3>Garanterat hantverk</h3><p>Alla arbeten har 12 månaders garanti, och material behåller tillverkarens garanti.</p></div>
     <div class="card"><div class="ico">☏</div><h3>Snabba, ärliga svar</h3><p>Ring eller skriv på WhatsApp vardagar 8–20. Passar ett jobb oss inte säger vi det — och tipsar om någon bra.</p></div>
