@@ -25,7 +25,7 @@ UI = {
     "foot_areas": "Areas we cover: Torre del Mar, Vélez-Málaga, Algarrobo, Caleta de Vélez, Almayate, Nerja, Torrox, Frigiliana, Viñuela and Rincón de la Victoria.",
     "foot_pages": "Pages",
     "foot_listed": "Listed on Axarquia.app",
-    "foot_listed_url": "https://axarquia.app/en/handymen/",
+    "foot_listed_url": "https://axarquia.app/en/builders/",
     "area_living_h": "New to {town}?",
     "area_living_p": "Just moved in or planning to? <a href=\"https://axarquia.app/en/\">Axarquia.app</a> is a plain-English guide to living in the Axarquia — health, council, water, emergencies and property — and it lists <a href=\"{url}\">local trades and services in {town}</a> if you need something we don't do.",
     "foot_rights": "All rights reserved.",
