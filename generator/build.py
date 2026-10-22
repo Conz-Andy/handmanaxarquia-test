@@ -270,6 +270,7 @@ def footer(lang, ui):
       <a href="{u('gallery')}">{ui["nav_gallery"]}</a>
       <a href="{blog_index_url(lang)}">{ui["nav_blog"]}</a>
       <a href="{u('contact')}">{ui["nav_contact"]}</a>
+      <a href="{ui["foot_listed_url"]}">{ui["foot_listed"]}</a>
       <a href="tel:+34711027432">+34 711 027 432</a>
       <a href="mailto:info@handymanaxarquia.com">info@handymanaxarquia.com</a>
       <a href="{FACEBOOK_URL}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px"><span style="display:inline-flex;width:15px;height:15px;color:#1877F2">{FB_SVG}</span>Facebook</a>
@@ -377,6 +378,11 @@ def area_body(lang, ui, key):
     w, h = social_image.dims(SITE, src)
     others = "".join(f'<li><a href="{area_url(lang, k)}">{AREAS[k]["name"]}</a></li>' for k in AREA_ORDER if k != key)
     def u(l, k): return slug_to_url(l, k)
+    # Outbound link to the matching town guide on axarquia.app (same slugs, /en/ and /sv/ sections).
+    town = a["name"].split(" &")[0]
+    living_url = f"https://axarquia.app/{lang}/{key}/"
+    living = (f'<h2>{ui["area_living_h"].format(town=town)}</h2>'
+              f'<p>{ui["area_living_p"].format(town=town, url=living_url)}</p>')
     return f"""<div class="page-hero"><div class="container">
   <div class="crumbs"><a href="{u(lang,'home')}">{ui["nav_home"]}</a> / <a href="{areas_index_url(lang)}">{ui["nav_areas"]}</a> / {a["name"]}</div>
   <h1>{c["h1"]}</h1>
@@ -388,6 +394,7 @@ def area_body(lang, ui, key):
     {c["prose"]}
     <h2>{ui["areas_nearby"]}</h2>
     <ul class="tick">{others}</ul>
+    {living}
   </div>
   {aside_card(lang, ui, u, None)}
 </div></section>
