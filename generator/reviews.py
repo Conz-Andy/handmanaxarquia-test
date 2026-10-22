@@ -2,6 +2,8 @@
 # Static copies of real Google / Facebook reviews with links to the live sources.
 
 GOOGLE_REVIEWS_URL = "https://search.google.com/local/reviews?placeid=ChIJ781fzipHcg0R-T6XK73cOTs"
+GOOGLE_LISTING_URL = "https://www.google.com/maps/place/?q=place_id:ChIJ781fzipHcg0R-T6XK73cOTs"
+AXARQUIA_LISTING_URL = "https://axarquia.app/en/pro/handyman-axarquia/"
 FACEBOOK_URL = "https://www.facebook.com/handymanaxarquia"
 FACEBOOK_REVIEWS_URL = "https://www.facebook.com/handymanaxarquia/reviews"
 
