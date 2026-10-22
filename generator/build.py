@@ -14,7 +14,7 @@ TODAY = datetime.date.today().isoformat()
 # site/images/ doesn't exist yet) that import would otherwise crash.
 ASSETS_B64 = GEN.parent / "assets_b64"
 (SITE / "images").mkdir(parents=True, exist_ok=True)
-for _b64name, _outname in [("logo160.png.b64", "logo.png"), ("logo_mark.svg.b64", "logo_mark.svg")]:
+for _b64name, _outname in [("logo160.png.b64", "logo.png"), ("logo_mark.svg.b64", "logo_mark.svg"), ("axarquia_mark.png.b64", "axarquia-app.png")]:
     _b64path = ASSETS_B64 / _b64name
     if _b64path.exists():
         (SITE / "images" / _outname).write_bytes(base64.b64decode(_b64path.read_text()))
@@ -39,7 +39,7 @@ for _base, _paths in _gallery.items():
 
 from content_en import PAGES as EN, UI as UI_EN
 from content_sv import PAGES as SV, UI as UI_SV
-from reviews import reviews_html, FACEBOOK_URL, FB_SVG, GOOGLE_REVIEWS_URL
+from reviews import reviews_html, FACEBOOK_URL, FB_SVG, GOOGLE_REVIEWS_URL, GOOGLE_LISTING_URL, G_SVG, AXARQUIA_LISTING_URL
 from helpers import aside_card, faq_section, cta_band
 from areas import AREAS, AREA_ORDER
 from blog_posts import POSTS, AUTHOR
@@ -270,6 +270,10 @@ def footer(lang, ui):
       <a href="{u('gallery')}">{ui["nav_gallery"]}</a>
       <a href="{blog_index_url(lang)}">{ui["nav_blog"]}</a>
       <a href="{u('contact')}">{ui["nav_contact"]}</a>
+      <div class="see-us"><span>{ui["foot_see_us"]}</span>
+        <a href="{GOOGLE_LISTING_URL}" target="_blank" rel="noopener" aria-label="Handyman Axarquia on Google" title="Google"><span class="see-ic">{G_SVG}</span></a>
+        <a href="{AXARQUIA_LISTING_URL}" aria-label="Handyman Axarquia on Axarquia.app" title="Axarquia.app"><img src="/images/axarquia-app.png" alt="Axarquia.app" width="62" height="24" loading="lazy"></a>
+      </div>
       <a href="tel:+34711027432">+34 711 027 432</a>
       <a href="mailto:info@handymanaxarquia.com">info@handymanaxarquia.com</a>
       <a href="{FACEBOOK_URL}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px"><span style="display:inline-flex;width:15px;height:15px;color:#1877F2">{FB_SVG}</span>Facebook</a>
@@ -377,6 +381,11 @@ def area_body(lang, ui, key):
     w, h = social_image.dims(SITE, src)
     others = "".join(f'<li><a href="{area_url(lang, k)}">{AREAS[k]["name"]}</a></li>' for k in AREA_ORDER if k != key)
     def u(l, k): return slug_to_url(l, k)
+    # Outbound link to the matching town guide on axarquia.app (same slugs, /en/ and /sv/ sections).
+    town = a["name"].split(" &")[0]
+    living_url = f"https://axarquia.app/{lang}/{key}/"
+    living = (f'<h2>{ui["area_living_h"].format(town=town)}</h2>'
+              f'<p>{ui["area_living_p"].format(town=town, url=living_url)}</p>')
     return f"""<div class="page-hero"><div class="container">
   <div class="crumbs"><a href="{u(lang,'home')}">{ui["nav_home"]}</a> / <a href="{areas_index_url(lang)}">{ui["nav_areas"]}</a> / {a["name"]}</div>
   <h1>{c["h1"]}</h1>
@@ -388,6 +397,7 @@ def area_body(lang, ui, key):
     {c["prose"]}
     <h2>{ui["areas_nearby"]}</h2>
     <ul class="tick">{others}</ul>
+    {living}
   </div>
   {aside_card(lang, ui, u, None)}
 </div></section>

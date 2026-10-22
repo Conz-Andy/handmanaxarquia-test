@@ -22,6 +22,9 @@ UI = {
     "foot_blurb": "Professionellt bygg-, renoverings- och fastighetsarbete i Axarquía och östra Costa del Sol. Över 35 års erfarenhet — alltid i tid och inom budget.",
     "foot_areas": "Vi arbetar i: Torre del Mar, Vélez-Málaga, Algarrobo, Caleta de Vélez, Almayate, Nerja, Torrox, Frigiliana, Viñuela och Rincón de la Victoria.",
     "foot_pages": "Sidor",
+    "foot_see_us": "Hitta oss på",
+    "area_living_h": "Ny i {town}?",
+    "area_living_p": "Har du precis flyttat hit eller planerar du att göra det? <a href=\"https://axarquia.app/sv/\">Axarquia.app</a> är en guide på svenska till livet i Axarquía — sjukvård, kommun, vatten, nödsituationer och bostad — och listar <a href=\"{url}\">lokala hantverkare och tjänster i {town}</a> om du behöver något vi inte gör.",
     "foot_rights": "Alla rättigheter förbehållna.",
     "spain": "Spanien",
 }
