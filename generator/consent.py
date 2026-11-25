@@ -22,12 +22,12 @@ How it works (GDPR / Spanish AEPD guidance):
 import html as _html
 from pathlib import Path
 
-GOOGLE_ADS_ID = ""
+GOOGLE_ADS_ID = "AW-18595997597"
 GOOGLE_ADS_LEAD = ""
 META_PIXEL_ID = ""
 
-LEGAL_NAME = ""
-LEGAL_NIF = ""
+LEGAL_NAME = "Nicholas Britton"
+LEGAL_NIF = "Y0163759J"
 
 
 def enabled():
@@ -215,7 +215,7 @@ def _owner_line(lang):
     if LEGAL_NAME:
         bits.append(LEGAL_NAME)
     if LEGAL_NIF:
-        bits.append(f"NIF {LEGAL_NIF}")
+        bits.append(f"NIE {LEGAL_NIF}")
     if not bits:
         return ""
     return ("Owner: " if lang == "en" else "Ägare: ") + ", ".join(bits) + "<br>"
