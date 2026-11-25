@@ -44,6 +44,7 @@ from helpers import aside_card, faq_section, cta_band
 from areas import AREAS, AREA_ORDER
 from blog_posts import POSTS, AUTHOR
 import social_image
+import consent
 
 # UI strings for the pages added by this generator (areas + blog), kept here
 # so content_en.py / content_sv.py stay untouched.
@@ -200,7 +201,7 @@ def head(lang, title, desc, url, alt_url, extra_schema=(), og_image=None, og_typ
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/seo.css">
 {''.join(blocks)}
-</head>"""
+{consent.head_snippet()}</head>"""
 
 # ------------------------------------------------------------- header/footer
 
@@ -276,10 +277,10 @@ def footer(lang, ui):
       <p style="margin-top:8px">Los Toscanos 33, Almayate Bajo<br>29749 Málaga, {ui["spain"]}</p>
     </div>
   </div>
-  <div class="base">© Handyman Axarquia · {ui["foot_rights"]}</div>
+  <div class="base">© Handyman Axarquia · {ui["foot_rights"]}{consent.footer_links(lang)}</div>
 </footer>
 <a class="wa-float" href="https://wa.me/34711027432" aria-label="WhatsApp">{WA_SVG}</a>
-</body>
+{consent.banner(lang)}</body>
 </html>"""
 
 # ---------------------------------------------------------------- writing
@@ -519,6 +520,21 @@ def render_post(lang, ui, p):
         + header(lang, ui, "blog", post_url("en", p), post_url("sv", p)) + body + footer(lang, ui)
     return write_page(url, html)
 
+# --------------------------------------------------- privacy & cookies page
+
+def render_privacy(lang, ui):
+    url = consent.privacy_url(lang); alt = consent.privacy_url(other(lang))
+    title, desc, h1, body = consent.policy_page(lang)
+    body = body.replace("{UPDATED}", fmt_date(TODAY, lang))
+    page = f"""<div class="page-hero"><div class="container">
+  <div class="crumbs"><a href="{slug_to_url(lang, 'home')}">{ui["nav_home"]}</a> / {h1}</div>
+  <h1>{h1}</h1>
+</div></div>
+<section><div class="container">{body}</div></section>"""
+    html = (head(lang, title, desc, url, alt, [breadcrumb_schema([(ui["nav_home"], slug_to_url(lang, "home")), (h1, url)])])
+            + header(lang, ui, None, consent.privacy_url("en"), consent.privacy_url("sv")) + page + footer(lang, ui))
+    return write_page(url, html)
+
 # ----------------------------------------------------- sitemap / robots etc.
 
 def sitemap(urls):
@@ -609,7 +625,9 @@ Also Algarrobo, Caleta de Vélez, Almayate, Viñuela, Sayalonga, Benajarafe, La 
 """)
 
 if __name__ == "__main__":
-    shutil.copy(GEN / "seo.css", SITE / "css" / "seo.css")
+    (SITE / "css").mkdir(parents=True, exist_ok=True)
+    (SITE / "css" / "seo.css").write_text((GEN / "seo.css").read_text() + consent.CSS)
+    consent.write_assets(SITE)
     social_image.build_default(SITE)
     urls = []
     for lang, PAGES, UI in (("en", EN, UI_EN), ("sv", SV, UI_SV)):
@@ -621,6 +639,7 @@ if __name__ == "__main__":
         urls.append(render_blog_index(lang, UI))
         for p in POSTS:
             urls.append(render_post(lang, UI, p))
+        urls.append(render_privacy(lang, UI))
     sitemap(urls)
     redirects()
     llms_txt("\n".join(f"- {p['en']['title']}: {BASE_URL}{post_url('en', p)}" for p in POSTS))
