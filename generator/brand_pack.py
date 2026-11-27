@@ -78,8 +78,9 @@ td .desc-sub { color:var(--muted); font-size:8pt; }
 .foot .scan { font-size:6.5pt; letter-spacing:1.5px; text-transform:uppercase; color:#8E8E93; text-align:center; margin-top:1mm; }
 """
 
-FONT_LINK = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
-             '<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">')
+FONT_LINK = ('<style>' + ''.join(
+    "@font-face{font-family:'Poppins';font-style:normal;font-weight:%d;font-display:swap;"
+    "src:url('/fonts/poppins-%d.woff2') format('woff2')}" % (w, w) for w in (300, 400, 500, 600, 700)) + '</style>')
 
 def doc_head(title):
     return (f'<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">'

@@ -9,8 +9,9 @@ import placement
 PHONE = "+34 711 027 432"
 WEB = "handymanaxarquia.com"
 
-FONT_LINK = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
-             '<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">')
+FONT_LINK = ('<style>' + ''.join(
+    "@font-face{font-family:'Poppins';font-style:normal;font-weight:%d;font-display:swap;"
+    "src:url('/fonts/poppins-%d.woff2') format('woff2')}" % (w, w) for w in (300, 400, 500, 600, 700)) + '</style>')
 
 FRONT_INNER = """<div style="width:100%;height:100%;background:radial-gradient(600px 400px at 50% 50%, #1a1a1e, #0B0B0C);display:flex;align-items:center;justify-content:center">
   <img src="/images/logo_mark.svg" alt="HA" style="width:270px">

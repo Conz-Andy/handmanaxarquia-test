@@ -52,13 +52,13 @@ def head_snippet():
 TEXT = {
     "en": {
         "title": "Cookies",
-        "body": "We'd like to use advertising cookies from Google and Meta so we can show our ads to people who have visited this site. Nothing is set unless you accept.",
+        "body": "Help us show you relevant offers. If you accept, Google and Meta advertising cookies let us show you our ads when you're planning your next job, and tell us which ads bring enquiries. Nothing is set unless you accept.",
         "accept": "Accept", "reject": "Reject", "more": "Privacy & cookies",
         "settings": "Cookie settings",
     },
     "sv": {
         "title": "Cookies",
-        "body": "Vi vill använda annonscookies från Google och Meta så att vi kan visa våra annonser för personer som har besökt webbplatsen. Inget sparas om du inte godkänner.",
+        "body": "Hjälp oss visa dig relevanta erbjudanden. Om du godkänner låter annonscookies från Google och Meta oss visa våra annonser när du planerar ditt nästa jobb, och se vilka annonser som ger förfrågningar. Inget sparas om du inte godkänner.",
         "accept": "Godkänn", "reject": "Avvisa", "more": "Integritet & cookies",
         "settings": "Cookieinställningar",
     },
@@ -255,7 +255,7 @@ def policy_page(lang):
 {cookies_intro}
 {_cookie_rows(lang)}
 {settings_link}
-<p>The site also loads its font from Google Fonts, which means your browser connects to Google's servers. No cookies are set by this.</p>
+<p>The site's font is hosted on our own server, so your browser does not contact Google Fonts.</p>
 <h2>Who else sees your data</h2>
 <p>We never sell your details. We use FormSubmit for the quote form{", plus " + platforms + " for advertising if you accept cookies" if ads else ""}. Some of these companies may process data outside the EU; where they do, they rely on the EU-US Data Privacy Framework or the European Commission's standard contractual clauses.</p>
 <h2>Your rights</h2>
@@ -287,7 +287,7 @@ def policy_page(lang):
 {cookies_intro}
 {_cookie_rows(lang)}
 {settings_link}
-<p>Webbplatsen hämtar också sitt typsnitt från Google Fonts, vilket betyder att din webbläsare ansluter till Googles servrar. Inga cookies sparas av detta.</p>
+<p>Webbplatsens typsnitt ligger på vår egen server, så din webbläsare kontaktar inte Google Fonts.</p>
 <h2>Vem mer ser dina uppgifter</h2>
 <p>Vi säljer aldrig dina uppgifter. Vi använder FormSubmit för offertformuläret{", samt " + platforms + " för annonsering om du godkänner cookies" if ads else ""}. Vissa av dessa företag kan behandla uppgifter utanför EU; i så fall sker det enligt EU-US Data Privacy Framework eller EU-kommissionens standardavtalsklausuler.</p>
 <h2>Dina rättigheter</h2>
