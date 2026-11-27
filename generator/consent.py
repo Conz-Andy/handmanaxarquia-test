@@ -23,7 +23,7 @@ import html as _html
 from pathlib import Path
 
 GOOGLE_ADS_ID = "AW-18595997597"
-GOOGLE_ADS_LEAD = ""
+GOOGLE_ADS_LEAD = "bUi6CNGbusAdEJ3PoaNF"
 META_PIXEL_ID = "1304004731916239"
 
 LEGAL_NAME = "Nicholas Britton"
