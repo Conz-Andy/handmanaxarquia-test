@@ -5,6 +5,13 @@ from pathlib import Path
 
 GEN = Path(__file__).parent
 SITE = GEN.parent / "site"
+
+# Poppins is self-hosted (latin subset) so visitors' browsers never contact Google Fonts.
+FONT_FACE_CSS = "\n".join(
+    "@font-face{font-family:'Poppins';font-style:normal;font-weight:%d;font-display:swap;"
+    "src:url('/fonts/poppins-%d.woff2') format('woff2')}" % (w, w)
+    for w in (300, 400, 500, 600, 700)
+) + "\n"
 BASE_URL = "https://handymanaxarquia.com"
 TODAY = datetime.date.today().isoformat()
 
@@ -195,9 +202,8 @@ def head(lang, title, desc, url, alt_url, extra_schema=(), og_image=None, og_typ
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="/images/favicon.png">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/seo.css">
 {''.join(blocks)}
@@ -626,7 +632,10 @@ Also Algarrobo, Caleta de Vélez, Almayate, Viñuela, Sayalonga, Benajarafe, La 
 
 if __name__ == "__main__":
     (SITE / "css").mkdir(parents=True, exist_ok=True)
-    (SITE / "css" / "seo.css").write_text((GEN / "seo.css").read_text() + consent.CSS)
+    (SITE / "css" / "seo.css").write_text((GEN / "seo.css").read_text() + FONT_FACE_CSS + consent.CSS)
+    (SITE / "fonts").mkdir(parents=True, exist_ok=True)
+    for _f in (GEN / "fonts").glob("*.woff2"):
+        (SITE / "fonts" / _f.name).write_bytes(_f.read_bytes())
     consent.write_assets(SITE)
     social_image.build_default(SITE)
     urls = []
